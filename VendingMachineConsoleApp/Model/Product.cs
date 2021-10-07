@@ -4,7 +4,7 @@ using System.Text;
 
 namespace VendingMachineConsoleApp.Model
 {
-    public abstract class Product : IPoducts
+    public abstract class Product
     {
         public int productId { get; set; }
         public int productPrice { get; set; }
