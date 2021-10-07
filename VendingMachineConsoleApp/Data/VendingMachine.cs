@@ -21,7 +21,14 @@ namespace VendingMachineConsoleApp.Data
         public int[] MoneyDenominations { get { return moneyDenominations; } }
         public Dictionary<int, int> EndTransaction(int productId)
         {
-            throw new NotImplementedException();
+            Product productSelected = Array.Find(Products, product => product.id == id);
+
+            Dictionary<int, int> changeDict = new Dictionary<int, int>();
+            for (int i = moneyDenominations.Length -1;i>=0; i--)
+            {
+                int change = moneyPool / moneyDenominations[i];
+            }
+
         }
 
         public void InsertMoney(int currency)
