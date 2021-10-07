@@ -17,7 +17,7 @@ namespace VendingMachineConsoleApp.Model
             return $"{productId}\t{productName}\t\t{productPrice}kr";
         }
 
-        public override bool PassAgeLimit(int age)
+        public bool PassAgeLimit(int age)
         {
             if (age == 18)
 
