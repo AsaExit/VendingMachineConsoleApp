@@ -12,6 +12,7 @@ namespace VendingMachineConsoleApp.Model
             productName = "Stuffed animal Cow";
             productPrice = 100;
         }
+        public int AgeLimit { get; set; }
         public override string Examine()
         {
             return $"{productId}\t{productName}\t\t\t{productPrice}kr";
@@ -19,7 +20,15 @@ namespace VendingMachineConsoleApp.Model
 
         public bool PassAgeLimit(int age)
         {
-            throw new NotImplementedException();
+            if (age > AgeLimit)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override string Use()
