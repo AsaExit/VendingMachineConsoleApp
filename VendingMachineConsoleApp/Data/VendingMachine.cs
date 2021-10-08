@@ -31,7 +31,7 @@ namespace VendingMachineConsoleApp.Data
                 {
                     changeDictionary.Add(moneyDenominations[i], change);
                 }
-                moneyPool = moneyPool % moneyDenominations[i];
+                moneyPool %= moneyPool % moneyDenominations[i];
             }
             return changeDictionary;
 
@@ -39,17 +39,46 @@ namespace VendingMachineConsoleApp.Data
 
         public void InsertMoney(int currency)
         {
-            throw new NotImplementedException();
+            if (Array.Find(moneyDenominations, money => money == currency) != 0)
+            {
+
+                moneyPool += Convert.ToInt32(currency);
+            }
+            else
+            {
+                throw new ArgumentException("Have you inserted the correctfull amout to the denominations?");
+            }
         }
 
         public Product Purchase(int id)
         {
-            throw new NotImplementedException();
+            Product productSelected = Array.Find(Products, product => product.productId == id);
+
+            if (productSelected == null)
+            {
+                throw new ArgumentException("the product you are looking for dose not exist");
+            }
+          
+            if (productSelected.productPrice > moneyPool)
+            {
+                throw new ArgumentException("you dont have sufficient amout of money for this product ");
+            }
+            else
+            {
+                //Whats left of the moneyPoool
+                moneyPool = moneyPool - productSelected.productPrice;
+            }
+
+            return productSelected;
         }
 
         public void ShowAll()
         {
-            throw new NotImplementedException();
+            foreach (Product product in Products)
+            {
+                Console.WriteLine(product.Examine());
+            }
+            Console.WriteLine();
         }
     }// End of Class Name
 }// End of namespace
