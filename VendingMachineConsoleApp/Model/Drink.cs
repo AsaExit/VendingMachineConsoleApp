@@ -12,8 +12,8 @@ namespace VendingMachineConsoleApp.Model
         {
             productId = 3;
             productName = "Beer";
-            productPrice = 30;
-       
+            productPrice = 30; //---PRISLAPP------
+
         }
         public int AgeLimit { get; set; }
         public override string Examine()
