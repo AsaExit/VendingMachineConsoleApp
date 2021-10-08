@@ -1,13 +1,15 @@
 ﻿using System;
-using VendingMachineConsoleApp.Model;
+using VendingMachineConsoleApp.Data;
 
 namespace VendingMachineConsoleApp
 {
     class Program
     {
+        public static VendingMachine vendingMachine = new VendingMachine();
         static void Main(string[] args)
         {
-            Console.WriteLine("Wohoooo wending machine");
+            VendingMachine vendingMachine = new VendingMachine();
+            Console.WriteLine("Wohoooo Vending machine");
         }
     }
 }

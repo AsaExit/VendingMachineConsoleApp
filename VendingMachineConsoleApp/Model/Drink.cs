@@ -20,7 +20,7 @@ namespace VendingMachineConsoleApp.Model
         {
             return $"{productId}\t{productName}\t\t{productPrice}kr";
         }
-
+        //---PassAgeLimit returns a bolean from userinput
         public bool PassAgeLimit(int age)
         {
             if (age >AgeLimit)
