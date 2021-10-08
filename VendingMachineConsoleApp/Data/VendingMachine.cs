@@ -11,7 +11,7 @@ namespace VendingMachineConsoleApp.Data
         // Fields
         readonly int[] moneyDenominations = new int[] { 1, 5, 10, 20, 50, 100, 500, 1000 };
 
-        readonly int moneyPool;
+        int moneyPool;
 
         public int MoneyPool { get { return moneyPool; } }
 
@@ -21,13 +21,19 @@ namespace VendingMachineConsoleApp.Data
         public int[] MoneyDenominations { get { return moneyDenominations; } }
         public Dictionary<int, int> EndTransaction(int productId)
         {
-            Product productSelected = Array.Find(Products, product => product.id == id);
+            
+            Dictionary<int, int> changeDictionary = new Dictionary<int, int>();
 
-            Dictionary<int, int> changeDict = new Dictionary<int, int>();
-            for (int i = moneyDenominations.Length -1;i>=0; i--)
+            for (int i = moneyDenominations.Length -1; i >= 0 ; i--)
             {
                 int change = moneyPool / moneyDenominations[i];
+                if (change != 0)
+                {
+                    changeDictionary.Add(moneyDenominations[i], change);
+                }
+                moneyPool = moneyPool % moneyDenominations[i];
             }
+            return changeDictionary;
 
         }
 
