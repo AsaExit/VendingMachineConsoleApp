@@ -12,7 +12,7 @@ namespace VendingMachineConsoleApp.Model
         {
             productId = 3;
             productName = "Beer";
-            productPrice = 30; //---PRISLAPP------
+            productPrice = 30; //---Just a PRISLAPP------
 
         }
         public int AgeLimit { get; set; }
@@ -36,7 +36,7 @@ namespace VendingMachineConsoleApp.Model
 
         public override string Use()
         {
-            return "You have to be 18 to drink a beer!";
+            return "If you are 18 years and older...Just enjoy ur Beer!";
         }
 
     }// End of Class Name

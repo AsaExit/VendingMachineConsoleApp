@@ -5,11 +5,12 @@ namespace VendingMachineConsoleApp
 {
     class Program
     {
-        public static VendingMachine vendingMachine = new VendingMachine();
+        public VendingMachine vendingMachine = new VendingMachine();
         static void Main(string[] args)
         {
             VendingMachine vendingMachine = new VendingMachine();
-            Console.WriteLine("Wohoooo Vending machine");
+            Console.WriteLine("Wohoooo Vending Machine");
+            
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using VendingMachineConsoleApp.Data;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,7 +11,7 @@ namespace VendingMachineConsoleApp.Model
         {
             productId = 2;
             productName = "Club Sandwich";
-            productPrice = 25;
+            productPrice = 25;//---Just a PRISLAPP------
         }
 
         public override string Examine()
