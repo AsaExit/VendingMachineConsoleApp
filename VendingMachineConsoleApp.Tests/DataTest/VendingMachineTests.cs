@@ -7,9 +7,19 @@ namespace VendingMachineConsoleApp.Tests.DataTest
 {
     public class VendingMachineTests
     {
+     
         [Fact]
-        public void Test1()
+        //[Theory]
+        public void InsertMonyeCurrency()
         {
+            //Arrange;
+          
+
+            //Act
+            
+
+            //Act
+            
 
         }
     }
