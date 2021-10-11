@@ -174,13 +174,13 @@ namespace VendingMachineConsoleApp.Tests.DataTest
             Product product = vendingMachine.Purchase(3);
 
             // Product id 3. Beer 30Kr 500-30=470 4 st hundralappar 1st 50 lapp 1 20 lapp
-            Dictionary<int, int> expectedChangeClubSandwich = new Dictionary<int, int> { { 100, 4 }, { 50, 1 }, { 20, 1 } };
+            Dictionary<int, int> expectedChangeBeer = new Dictionary<int, int> { { 100, 4 }, { 50, 1 }, { 20, 1 } };
 
             //Act
             Dictionary<int, int> result = vendingMachine.EndTransaction(product.productId);
 
             //Assert
-            Assert.Equal(expectedChangeClubSandwich, result);
+            Assert.Equal(expectedChangeBeer, result);
         }
 
     }

@@ -12,13 +12,12 @@ namespace VendingMachineConsoleApp.Data
         readonly int[] moneyDenominations = new int[] { 1, 5, 10, 20, 50, 100, 500, 1000 };
 
         int moneyPool;
-
+        //---Properties
         public int MoneyPool { get { return moneyPool; } }
 
         public Product[] Products = new Product[] { new Toy(), new Food(), new Drink() };
 
-        //---Properties
-        //public int[] MoneyDenominations { get { return moneyDenominations; } }
+
         public Product Purchase(int Id)
         {
             Product productSelected = Array.Find(Products, product => product.productId == Id);
